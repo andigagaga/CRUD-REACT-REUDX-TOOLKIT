@@ -14,18 +14,21 @@ const JumbotronComponent = () => {
     <div className="my-4">
       <Row>
         <Col>
-          <Container>
-            <Card body>
-              <CardTitle tag="h1">Guswandi Academy</CardTitle>
-              <CardText>
-                With supporting text below as a natural lead-in to additional
-                content.
+          <Container className="shadow-lg">
+            <Card
+              body
+              className="text-center bg-secondary text-light shadow-lg"
+            >
+              <CardTitle tag="h1" className="display-3 fw-bold">
+                welcome to GUSWANDI academy
+              </CardTitle>
+              <CardText className="lead fw-normal">
+                Learn and grow with our top-notch courses and expert
+                instructors.
               </CardText>
-              <CardText>
-                With supporting text below as a natural lead-in to additional
-                content.
-              </CardText>
-              <Button className="bg-primary w-25">! Learn more</Button>
+              <Button className="btn bg-secondary-subtle btn-lg fw-semibold text-black">
+                Start Learning
+              </Button>
             </Card>
           </Container>
         </Col>

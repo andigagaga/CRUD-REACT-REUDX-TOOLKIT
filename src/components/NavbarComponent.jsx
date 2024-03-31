@@ -17,23 +17,25 @@ function NavbarComponents() {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
+    <div className="bg-dark shadow-lg">
+      <Navbar data-bs-theme="dark" light expand="md">
         <Container>
-          <Collapse isOpen={isOpen} navbar>
-            <NavbarBrand href="/">Guswandi Shops</NavbarBrand>
-            <NavbarToggler onClick={toggle} />
-            <Nav className="me-auto" navbar>
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar className="gap-5">
+            <NavbarBrand href="https://www.linkedin.com/in/guswandi">Guswandi Shops</NavbarBrand>
+            <Nav navbar>
               <NavItem>
-                <NavLink href="/components/">Home</NavLink>
+                <NavLink href="/">Homes</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">
+                <NavLink href="https://github.com/andigagaga">
                   About
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink>Admin</NavLink>
+              </NavItem>
             </Nav>
-            <NavbarText>Admin</NavbarText>
           </Collapse>
         </Container>
       </Navbar>

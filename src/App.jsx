@@ -6,7 +6,7 @@ import { NavbarComponent } from "./components/index";
 
 export default function App() {
   return (
-    <div>
+    <div className="bg-secondary-subtle">
       <NavbarComponent />
       <Router />
     </div>

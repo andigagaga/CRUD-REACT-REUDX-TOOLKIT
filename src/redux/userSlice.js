@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUsers } from "./services/getUsers";
+import { createUser } from "./services/createUser";
 import { deleteUser } from "./services/deleteUser";
 import { getDetailUser } from "./services/getDetailUser";
+import { getUsers } from "./services/getUsers";
+import { editUser } from "./services/editUser";
 
 const initialState = {
     users: [],
@@ -17,6 +19,12 @@ export const userSlice = createSlice({
     reducers: {
         clearDetailUser: (state) => {
             state.selectedDetailUser = null;
+        },
+        editUserSucceess: (state, action) => {
+            const editUserIndex = state.users.findIndex(user => user.id === action.payload.id)
+            if(editUserIndex !== -1) {
+                state.users[editUserIndex] = action.payload;
+            }
         }
     },
     extraReducers: (builder) => {
@@ -50,6 +58,30 @@ export const userSlice = createSlice({
             .addCase(getDetailUser.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message
+            })
+            .addCase(createUser.pending, (state) => {
+                state.status = 'loading';
+            })
+            .addCase(createUser.fulfilled, (state,action) => {
+                state.status = 'succeeded';
+                state.users.push(action.payload)
+            })
+            .addCase(createUser.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message
+            })
+            .addCase(editUser.pending, (state) => {
+                state.status = 'loading'
+            })
+            .addCase(editUser.fulfilled, (state, action) => {
+                state.status = 'succeeded';
+                state.error = null;
+                state.selectedDetailUser = null;
+                state.total = state.users.length;
+            })
+            .addCase(editUser.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message;
             })
             .addCase("users/clearDetailUser", (state) => {
                 state.selectedDetailUser = null;
