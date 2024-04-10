@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getUsers = createAsyncThunk("users/getUsers", async () => {
   const response = await axios.get(
-    "https://6603d86e2393662c31cfd8b6.mockapi.io/users"
+    "https://66169209ed6b8fa43480cf0e.mockapi.io/users"
   );
   return response.data;
 });

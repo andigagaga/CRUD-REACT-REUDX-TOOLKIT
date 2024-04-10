@@ -66,27 +66,27 @@ function TableComponent() {
 
   // // ini ketika menggunakan data dummy saja
   // const [users, setUsers] = useState([
-  //   {
-  //     id: 1,
-  //     name: "Guswandi",
-  //     alamat: "Padang",
-  //     umur: 20,
-  //     noHp: "0897836318",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Desmi al syafira",
-  //     alamat: "Padang",
-  //     umur: 20,
-  //     noHp: "0897836318",
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Julia putri",
-  //     alamat: "Padang",
-  //     umur: 20,
-  //     noHp: "0897836318",
-  //   },
+    // {
+    //   id: 1,
+    //   name: "Guswandi",
+    //   alamat: "Padang",
+    //   umur: 20,
+    //   noHp: "0897836318",
+    // },
+    // {
+    //   id: 2,
+    //   name: "Desmi al syafira",
+    //   alamat: "Padang",
+    //   umur: 20,
+    //   noHp: "0897836318",
+    // },
+    // {
+    //   id: 3,
+    //   name: "Julia putri",
+    //   alamat: "Padang",
+    //   umur: 20,
+    //   noHp: "0897836318",
+    // },
   // ]);
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -140,7 +140,7 @@ function TableComponent() {
               <th className="text-warning-emphasis">Alamat</th>
               <th className="text-primary">Umur</th>
               <th className="text-black">No Handphone</th>
-              <th className="text-warning">Action</th>
+              <th className="text-warning text-center">Action</th>
             </tr>
           </thead>
           <tbody>

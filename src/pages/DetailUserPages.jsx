@@ -93,10 +93,10 @@ export default function DetailUserPages() {
                   <td className="p-4 text-primary">{userDetail.umur}</td>
                 </tr>
                 <tr>
-                  <th className="p-4 text-black" scope="row">
+                  <th className="p-4 text-warning" scope="row">
                     No Handphone
                   </th>
-                  <td className="p-4 text-black">{userDetail.noHp}</td>
+                  <td className="p-4 text-warning">{userDetail.noHp}</td>
                 </tr>
               </tbody>
             </Table>
